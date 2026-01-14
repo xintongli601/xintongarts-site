@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last legacy of Human Beings - XINTONGARTS</title>
+    <style>
+        /* --- 1. 基础全局样式 --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        /* --- 2. 动画定义 --- */
+        @keyframes sectionFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated-content {
+            opacity: 0;
+            animation: sectionFadeIn 1.2s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        /* --- 3. 导航栏 (直接显示) --- */
+        header {
+            padding: 40px 60px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #000000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover, nav a.active { opacity: 1; }
+
+        /* --- 4. 作品信息布局 --- */
+        .detail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .project-title {
+            font-size: 82px;
+            font-weight: 300;
+            margin: 40px 0 60px 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            line-height: 1.1;
+        }
+
+        .project-main-content {
+            display: flex;
+            gap: 100px;
+            align-items: flex-start;
+        }
+
+        /* 左侧栏 */
+        .project-meta {
+            flex: 1;
+        }
+
+        .meta-group {
+            margin-bottom: 40px;
+        }
+
+        .meta-label {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .meta-value a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* 右侧描述栏 */
+        .project-description {
+            flex: 1.5;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 300;
+            padding-top: 6px; /* 确保首行与左侧 "Type" 对齐 */
+        }
+
+        .project-description p {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        /* --- 5. 图片合集区域 --- */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 100px 0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* --- 6. 底部导航 --- */
+        .project-footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 50px 0 80px 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover { opacity: 0.6; }
+
+        .hidden { visibility: hidden; pointer-events: none; }
+
+        /* --- 7. 响应式适配 --- */
+        @media (max-width: 900px) {
+            .project-main-content { flex-direction: column; gap: 40px; }
+            .project-gallery { grid-template-columns: 1fr; }
+            .project-title { font-size: 48px; }
+            .detail-container { padding: 0 30px; }
+            header { padding: 30px 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">XINTONGARTS</div>
+        <nav>
+            <a href="index.html">About</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="animated-content">
+        <main class="detail-container">
+            
+            <h1 class="project-title">The Last legacy of <br>Human Beings</h1>
+
+            <div class="project-main-content">
+                <div class="project-meta">
+                    <div class="meta-group">
+                        <div class="meta-label">Type</div>
+                        <div class="meta-value">On-site installation; Immersive projection; Animation</div>
+                    </div>
+
+                    <div class="meta-group">
+                        <div class="meta-label">Date</div>
+                        <div class="meta-value">2024.11</div>
+                    </div>
+
+                    <div class="meta-group">
+                        <div class="meta-label">Link</div>
+                        <div class="meta-value">
+                            <a href="https://www.youtube.com/watch?v=o1UC1fAMOkM" target="_blank">Click this link to watch the video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <p>“The Last Legacy of Human Being” is a contemplative installation that invites viewers to reflect on the essence of humanity‘s cultural and philosophical legacy. Situated in Room 216 of the Old Teachers’ College, the work spans 2 metres in length and 2 metres in height, incorporating artificial moss, flowers, foam, glass, and a holographic projector measuring 26 cm by 20 cm by 20 cm. At its heart, the holographic display projects a looping 1080p animation created in TouchDesigner, symbolizing the ongoing impact of human creativity.</p>
+
+                    <p>Thematically, the installation imagines a post-human era, exploring the idea of a "last legacy" left behind before humanity’s extinction. What would remain if we, as a species, a civilisation vanished? The work poses essential questions about what defines our cultural essence and what truly matters in the face of impermanence. Technically, the piece embodies a synergy between digital and traditional mediums, reflecting the evolution of artistic practices in contemporary art. It responds to the growing trend of integrating technology into artistic practice, offering a way to explore big questions about humanity and its place in the world.</p>
+                    
+                    <p>By combining handcrafted materials with dynamic digital visuals, The Last Legacy of Human Being creates a space for reflection on the relationship between humanity, time, and legacy.</p>
+                </div>
+            </div>
+
+            <section class="project-gallery">
+                <div class="gallery-item"><img src="thelastlegacy1.PNG" alt="Legacy Image 1"></div>
+                <div class="gallery-item"><img src="thelastlegacy2.JPG" alt="Legacy Image 2"></div>
+                <div class="gallery-item"><img src="thelastlegacy3.png" alt="Legacy Image 3"></div>
+                <div class="gallery-item"><img src="thelastlegacy4.png" alt="Legacy Image 4"></div>
+            </section>
+
+            <footer class="project-footer-nav">
+                <a href="#" class="nav-link hidden">
+                    <span>❮</span> Previous Project
+                </a>
+
+                <a href="wasabi_detail.html" class="nav-link">
+                    Next Project <span>❯</span>
+                </a>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>

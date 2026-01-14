@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XINTONGARTS - About</title>
+    <style>
+        /* --- 基础样式 --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- 顶部导航 --- */
+        header {
+            padding: 40px 60px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        /* --- 核心动画逻辑 --- */
+        @keyframes pureFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* 主体布局 */
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* 初始状态不可见 */
+        h1, .description p {
+            opacity: 0;
+            animation: pureFadeIn 1.5s ease-in-out forwards;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation-delay: 0.3s;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 2;
+            font-weight: 400;
+            max-width: 800px;
+        }
+
+        /* 逐段显现延迟设置 (已修复单位错误) */
+        .description p:nth-child(1) { animation-delay: 2.0s; }
+        .description p:nth-child(2) { animation-delay: 3.2s; }
+        .description p:nth-child(3) { animation-delay: 4.4s; } /* 此处已修正为 4.4s */
+
+        /* --- 装饰元素 --- */
+        .side-tab {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 40px;
+            background-color: #94a684;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        /* 移动端调整 */
+        @media (max-width: 768px) {
+            header { padding: 30px 20px; }
+            h1 { font-size: 26px; }
+            .description { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="side-tab"></div>
+
+    <header>
+        <div class="logo">XINTONGARTS</div>
+        <nav>
+            <a href="index.html" class="active">About</a>
+            <a href="portfolio.html">Portfolio</a> 
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>ABOUT XINTONG</h1>
+
+        <div class="description">
+            <p>A Chinese crossdisciplinary artist based in Sydney and Guangzhou.</p>
+            <p>Graduated from Sydney College of Arts, now diving into computer science.</p>
+            <p>Creating things.</p>
+        </div>
+    </main>
+
+</body>
+</html>

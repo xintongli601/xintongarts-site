@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ceremony of Nature - XINTONGARTS</title>
+    <style>
+        /* --- 1. 基础全局样式 --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        /* --- 2. 动画定义 --- */
+        @keyframes sectionFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 除了导航栏以外的部分应用渐显动画 */
+        .animated-content {
+            opacity: 0;
+            animation: sectionFadeIn 1.2s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        /* --- 3. 导航栏 (直接显示，无动画) --- */
+        header {
+            padding: 40px 60px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #000000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover, nav a.active { opacity: 1; }
+
+        /* --- 4. 作品详情布局 --- */
+        .detail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        /* 标题单独一行 */
+        .project-title {
+            font-size: 82px;
+            font-weight: 300;
+            margin: 40px 0 60px 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        /* 内容分两栏布局 */
+        .project-main-content {
+            display: flex;
+            gap: 100px;
+            align-items: flex-start; /* 顶部对齐 */
+        }
+
+        /* 左侧栏：作品元数据 */
+        .project-meta {
+            flex: 1;
+        }
+
+        .meta-group {
+            margin-bottom: 40px;
+        }
+
+        .meta-label {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* 右侧栏：作品描述 */
+        .project-description {
+            flex: 1.5;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 300;
+            /* 调整上边距，使其第一行文字与左边的 "Type" 标签横向对齐 */
+            padding-top: 6px; 
+        }
+
+        /* --- 5. 图片合集区域 --- */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 100px 0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* --- 6. 底部导航 --- */
+        .project-footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 50px 0 80px 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover { opacity: 0.6; }
+
+        .hidden { visibility: hidden; pointer-events: none; }
+
+        /* --- 7. 响应式适配 --- */
+        @media (max-width: 900px) {
+            .project-main-content { flex-direction: column; gap: 40px; }
+            .project-gallery { grid-template-columns: 1fr; }
+            .project-title { font-size: 56px; }
+            .detail-container { padding: 0 30px; }
+            header { padding: 30px 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">XINTONGARTS</div>
+        <nav>
+            <a href="index.html">About</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="animated-content">
+        <main class="detail-container">
+            
+            <h1 class="project-title">The Ceremony of <br>Nature</h1>
+
+            <div class="project-main-content">
+                <div class="project-meta">
+                    <div class="meta-group">
+                        <div class="meta-label">Type</div>
+                        <div class="meta-value">Photography</div>
+                    </div>
+
+                    <div class="meta-group">
+                        <div class="meta-label">Date</div>
+                        <div class="meta-value">2023.06.04</div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    A collection of 22 photographs portraying a human-ghost figure wandering in the nature, digital and hard copy (10cm x 10cm printed photographs).
+                </div>
+            </div>
+
+            <section class="project-gallery">
+                <div class="gallery-item"><img src="ceremony1.png" alt="Ceremony Image 1"></div>
+                <div class="gallery-item"><img src="ceremony2.png" alt="Ceremony Image 2"></div>
+                <div class="gallery-item"><img src="ceremony3.png" alt="Ceremony Image 3"></div>
+                <div class="gallery-item"><img src="ceremony4.png" alt="Ceremony Image 4"></div>
+                <div class="gallery-item"><img src="ceremony5.png" alt="Ceremony Image 5"></div>
+                <div class="gallery-item"><img src="ceremony6.png" alt="Ceremony Image 6"></div>
+                <div class="gallery-item"><img src="ceremony7.png" alt="Ceremony Image 7"></div>
+                <div class="gallery-item"><img src="ceremony8.png" alt="Ceremony Image 8"></div>
+                <div class="gallery-item"><img src="ceremony9.png" alt="Ceremony Image 9"></div>
+                <div class="gallery-item"><img src="ceremony10.png" alt="Ceremony Image 10"></div>
+                <div class="gallery-item"><img src="ceremony11.png" alt="Ceremony Image 11"></div>
+                <div class="gallery-item"><img src="ceremony12.png" alt="Ceremony Image 12"></div>
+                <div class="gallery-item"><img src="ceremony13.png" alt="Ceremony Image 13"></div>
+                <div class="gallery-item"><img src="ceremony14.png" alt="Ceremony Image 14"></div>
+                <div class="gallery-item"><img src="ceremony15.png" alt="Ceremony Image 15"></div>
+                <div class="gallery-item"><img src="ceremony16.png" alt="Ceremony Image 16"></div>
+                <div class="gallery-item"><img src="ceremony17.png" alt="Ceremony Image 17"></div>
+                <div class="gallery-item"><img src="ceremony18.png" alt="Ceremony Image 18"></div>
+                <div class="gallery-item"><img src="ceremony19.png" alt="Ceremony Image 19"></div>
+                <div class="gallery-item"><img src="ceremony20.png" alt="Ceremony Image 20"></div>
+                <div class="gallery-item"><img src="ceremony21.png" alt="Ceremony Image 21"></div>
+                <div class="gallery-item"><img src="ceremony22.png" alt="Ceremony Image 22"></div>
+            </section>
+
+            <footer class="project-footer-nav">
+                <a href="circle_detail.html" class="nav-link">
+                    <span>❮</span> Previous Project
+                </a>
+
+                <a href="untitled_detail.html" class="nav-link">
+                    Next Project <span>❯</span>
+                </a>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>
